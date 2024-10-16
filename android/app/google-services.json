@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "990331175471",
+    "project_id": "fmc-mobile-devices",
+    "storage_bucket": "fmc-mobile-devices.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990331175471:android:0c1b9c9eb94e857a93bcda",
+        "android_client_info": {
+          "package_name": "com.ringee"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzAQ7KwacJpgC-mZ5j1Mti0z0S4UgL74g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

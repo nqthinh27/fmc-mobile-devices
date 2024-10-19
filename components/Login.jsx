@@ -78,6 +78,19 @@ export default function Login() {
         }
         // Alert.alert("Đã ấn vào nút đăng nhập");
     };
+
+    useEffect(() => {
+        const getLoginInfo = async () => {
+            const loginInfo = await AsyncStorage.getItem(loginInfoKey);
+            if (loginInfo !== null) {
+                const { mobileDeviceCode, password, phonenumber } = JSON.parse(loginInfo);
+                setPhonenumber(phonenumber)
+                setPassword(password);
+                setMobileDeviceCode(mobileDeviceCode);
+            }
+        }
+        getLoginInfo();
+    }, []);
     return (
         <SafeAreaView style={[loginCss.customSafeArea, { backgroundColor: colors.white }]}>
             <View style={loginCss.container}>

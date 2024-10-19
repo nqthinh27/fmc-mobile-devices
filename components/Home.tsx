@@ -104,7 +104,6 @@ const Home = () => {
       const logout = await postDataBackend('/api/logout/token-device', reqBody, accessToken);
       if (logout && logout.code === 201) {
         await AsyncStorage.removeItem(userKey)
-        await AsyncStorage.removeItem(loginInfoKey)
         removeCurrentUser();
         removeTokenDevice();
         removeLoginInfo();
@@ -136,6 +135,7 @@ const Home = () => {
           <Text style={styles.label}>Địa chỉ: {currentUser?.address || 'Không xác định'}</Text>
           <Text style={styles.label}>Email: {currentUser?.email || 'Không xác định'}</Text>
           <Text style={styles.label}>Mã thiết bị: {currentUser?.mobileCode || 'Không xác định'}</Text>
+          <Text style={styles.label}>Giới hạn thiết bị: {currentUser?.limitDevice || 'Không xác định'}</Text>
         </View>
         <View style={styles.logoutContainer}>
           <Pressable style={styles.button} onPress={handleLogout}>
@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   userInfoContainer: {
     paddingHorizontal: 16,
-    // marginBottom: 20,
+    marginTop: 30,
     // alignItems: 'center',
   },
   label: {
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
   },
   button: {
-    backgroundColor: '#007BFF',
+    backgroundColor: '#37874E',
     paddingVertical: 12,
     borderRadius: 25,
     marginHorizontal: 10,
